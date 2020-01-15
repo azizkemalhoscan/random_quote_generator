@@ -10,6 +10,9 @@ project 1 - A Random Quote Generator
 /***
  * `quotes` array
 ***/
+
+// I created an array with objects of quotes
+// I added 5 quotes from significant people and included source citaion and year for these quotes
 var quotes = [{
   quote: "Be yourself; everyone else is already taken",
   source: "Oscar Wilde",
@@ -36,7 +39,8 @@ var quotes = [{
 /***
  * `getRandomQuote` function
 ***/
-
+/* Here I created a function to get a random number and use that random number to pick one of
+the quotes randomly by using that random number as an index of quotes array. */
 function getRandomQuote(arr) {
   let randomNumber = Math.floor(Math.random() * (quotes.length));
   return quotes[randomNumber];
@@ -46,6 +50,11 @@ console.log(getRandomQuote());
 /***
  * `printQuote` function
 ***/
+
+/* Here first I creted a randomQuote variable
+I created another variable called typeOnScreen to assemble components of quotes,
+their sources and if there is -years and citations,
+and finnally located typeOnScreen variable to its relevant position in the document by using innerHTML prop*/
 function printQuote() {
   let randomQuote = getRandomQuote(quotes)
   let typeOnScreen = '';
@@ -70,6 +79,6 @@ function printQuote() {
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-
+// Lastly I have corrected the address of event listener since it was not addresing the relevant button on document.
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
